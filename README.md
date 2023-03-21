@@ -1,0 +1,1 @@
+Check out `/hrnet` for the new version of the app

@@ -1,0 +1,3 @@
+[submodule "Old-Front-End"]
+	path = _old
+	url = https://github.com/OpenClassrooms-Student-Center/P12_Front-end.git
