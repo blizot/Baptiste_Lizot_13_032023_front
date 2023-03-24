@@ -1,0 +1,52 @@
+@use '../components/' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  margin-bottom: 1rem;
+
+  background-color: color('light');
+  border-bottom: 1px solid color('primary');
+  position: sticky;
+  top: 0;
+  z-index: 999999999;
+
+  &__app-name {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+  }
+    
+  &__links-item {
+    &:hover {
+      text-decoration: color('primary') wavy underline;
+    }
+
+    &.active {
+      color: color('primary');
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    // to prevent layout shifting
+    &::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+}

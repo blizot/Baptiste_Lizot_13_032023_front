@@ -1,0 +1,13 @@
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  
+  // everything below keeps the footer where it belongs
+  margin-top: auto;
+}
+  
+#root { 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
