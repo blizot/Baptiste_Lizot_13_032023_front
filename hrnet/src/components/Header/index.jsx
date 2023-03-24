@@ -2,12 +2,12 @@ import { Link, NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header className='header'>
-      <Link to='/' className='header__app-name'>
-        <h1>HRnet</h1>
-      </Link>
-      <nav>
-        <ul className='header__links'>
+    <header>
+      <nav className='header'>
+        <Link to='/' className='header__app-name'>
+          <h1>HRnet</h1>
+        </Link>
+        <menu className='header__links'>
           <li>
             <NavLink to='/' title='Home'
               className='header__links-item'>
@@ -20,7 +20,7 @@ function Header() {
               Employees
             </NavLink>
           </li>
-        </ul>
+        </menu>
       </nav>
     </header>
   )
