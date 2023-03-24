@@ -15,8 +15,10 @@
     gap: 0.5rem;
     width: 18rem;
 
-    input {
+    input,
+    select {
       border: 1px solid color('dark');
+      background-color: color('light');
       border-radius: 0.25rem;
       font-size: 1rem;
       padding: 0.25rem;
@@ -24,6 +26,17 @@
       &:focus-visible {
         border: 1px solid color('primary');
         outline-width: 1px;
+      }
+
+      // remove input number spinner
+      &[type=number] {
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
       }
     }
   }

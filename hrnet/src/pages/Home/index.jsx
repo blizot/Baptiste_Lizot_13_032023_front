@@ -1,3 +1,7 @@
+import DateSelector from '../../components/DateSelector'
+import DepartmentDropdown from '../../components/DepartmentDropdown'
+import StateDropdown from '../../components/StateDropdown'
+
 function Home() {
   function handleSubmit(event) {
     event.preventDefault()
@@ -39,9 +43,7 @@ function Home() {
         <label htmlFor='lastName'>Last Name</label>
         <input name='lastName' id='lastName' type='text' />
 
-        {/* to be replaced with date selector component */}
-        <label htmlFor='birthDate'>Date of Birth</label>
-        <input name='birthDate' id='birthDate' type='text' />
+        <DateSelector name='birthDate' label='Date of Birth' />
 
         <fieldset className='home__form-address-area'>
           <legend>Address</legend>
@@ -52,21 +54,15 @@ function Home() {
           <label htmlFor='addressCity'>City</label>
           <input name='addressCity' id='addressCity' type='text' />
 
-          {/* to be replaced with dropdown menu component */}
-          <label htmlFor='addressState'>State</label>
-          <input name='addressState' id='addressState' type='text' />
+          <StateDropdown />
 
           <label htmlFor='addressZipCode'>Zip Code</label>
-          <input name='addressZipCode' id='addressZipCode' type='text' />
+          <input name='addressZipCode' id='addressZipCode' type='number' />
         </fieldset>
 
-        {/* to be replaced with date selector component */}
-        <label htmlFor='startDate'>Start Date</label>
-        <input name='startDate' id='startDate' type='text' />
+        <DateSelector name='startDate' label='Start Date' />
 
-        {/* to be replaced with dropdown menu component */}
-        <label htmlFor='department'>Department</label>
-        <input name='department' id='department' type='text' />
+        <DepartmentDropdown />
 
         <button className='home__form-button'>Create Employee</button>
       </form>
