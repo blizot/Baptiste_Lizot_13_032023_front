@@ -1,0 +1,22 @@
+@use '../components/' as *;
+
+.notification {
+  position: fixed;
+  z-index: 999999999;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  top: 1.5rem;
+  
+  background-color: color('primary');
+  color: color('light');
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+
+  transition: transform 0.5s ease-in-out;
+
+  &.visible {
+    transform: translate(-50%, 0);
+  }
+}

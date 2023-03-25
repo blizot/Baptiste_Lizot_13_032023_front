@@ -1,6 +1,7 @@
 import DateSelector from '../../components/DateSelector'
 import DepartmentDropdown from '../../components/DepartmentDropdown'
 import StateDropdown from '../../components/StateDropdown'
+import Notification from '../../components/Notification'
 
 function Home() {
   function handleSubmit(event) {
@@ -29,6 +30,12 @@ function Home() {
       startDate,
       department,
     }
+
+    const notification = document.getElementById('created-employee-notification')
+    notification.classList.add('visible')
+    setTimeout(() => {
+      notification.classList.remove('visible')
+    }, 1500);
 
     console.log(employee)
   }
@@ -66,6 +73,8 @@ function Home() {
 
         <button className='home__form-button'>Create Employee</button>
       </form>
+
+      <Notification message='Employee created!' id='created-employee' />
     </main>
   )
 }
