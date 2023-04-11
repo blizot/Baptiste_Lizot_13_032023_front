@@ -1,0 +1,83 @@
+@use '../components/' as *;
+
+.datatable {
+  :where(button),
+  :where(select),
+  :where(input) {
+    color: color('dark');
+  }
+  :where(button:disabled) {
+    color: hslac(color('dark'), 0.3);
+  }
+
+  &__length-selector,
+  &__search-bar,
+  &__seek-input,
+  &__head,
+  &__head::after,
+  &__body,
+  &__bottom-actions :where(button) {
+    border-color: color('dark');
+    background-color: color('light');
+  }
+
+  &__head {
+    top: 2.8rem;
+  }
+
+  &__bottom-actions :where(button:hover),
+  &__bottom-actions :where(button:focus) {
+    background-color: hslac(color('primary'), 0.3);
+  }
+
+  &__length-selector:focus,
+  &__search-bar:focus,
+  &__seek-input:focus,
+  &__bottom-actions :where(button:focus) {
+    border-color: color('primary');
+    outline-width: 1px;
+  }
+
+  &__body td,
+  &__bottom-actions button:disabled,
+  &__bottom-actions button:disabled:hover {
+    border-color: hslac(color('dark'), 0.3);
+  }
+
+  &__bottom-actions :where(button:disabled:hover) {
+    background-color: color('light');
+  }
+
+  &__bottom--page-indicator,
+  &__bottom--page-indicator:hover {
+    color: color('dark');
+    background-color: color('primary', 'lighter');
+  }
+
+  &__body tr:nth-child(even) {
+    background-color: hslac(color('primary'), 0.05);
+  }
+
+  &__body tr:hover td {
+    background-color: hslac(color('primary'), 0.15);
+  }
+
+  &__body--highlight {
+    background-color: hslac(color('primary', 'darker'), 0.15);
+  }
+
+  tr:hover td.datatable__body--highlight {
+    background-color: hslac(color('primary', 'darker'), 0.25);
+  }
+
+  &__shortcuts {
+    code {
+      background-color: hslac(color('primary', 'lighter'), 0.5);
+      color: color('dark')
+    }
+
+    &-modal {
+      border-color: color('primary');
+    }
+  }
+}
