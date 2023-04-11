@@ -9,8 +9,8 @@ function Home() {
 
     const firstName = event.target.firstName.value
     const lastName = event.target.lastName.value
-    const birthDate = event.target.birthDate.value
-    const startDate = event.target.startDate.value
+    const birthDate = event.target.birthDate.value.replace(/-/g, '/')
+    const startDate = event.target.startDate.value.replace(/-/g, '/')
     const addressStreet = event.target.addressStreet.value
     const addressCity = event.target.addressCity.value
     const addressState = event.target.addressState.value
@@ -21,12 +21,10 @@ function Home() {
       firstName,
       lastName,
       birthDate,
-      address: {
-        street: addressStreet,
-        city: addressCity,
-        state: addressState,
-        zipCode: addressZipCode,
-      },
+      addressStreet,
+      addressCity,
+      addressState,
+      addressZipCode,
       startDate,
       department,
     }
