@@ -1,0 +1,232 @@
+/* YOU SHOULD EDIT THE COMPONENT'S CSS IN AN OTHER FILE */
+
+/* we use the :where() selector so the classes have no  */
+/* specificity in order to allow you to personalize the */
+/* component to your liking without the !important flag */
+
+:where(.datatable) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 992px) {
+  :where(.datatable) {
+    overflow-x: unset;
+  }
+}
+
+/* top section: table length selector and search feature */
+:where(.datatable__top-actions) {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  gap: 4rem;
+}
+
+:where(.datatable__length-selector) {
+  border: #000 solid 1px;
+  border-radius: 0.25rem;
+  height: 1.5rem;
+  padding-inline: 0.25rem;
+  background-color: #fff;
+}
+
+:where(.datatable__search-bar) {
+  border: #000 solid 1px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+  height: 1.5rem;
+}
+
+/* table section - overall style */
+:where(.datatable__table) {
+  border-collapse: collapse;
+}
+
+/* stick head to to on scroll */
+:where(.datatable__head) {
+  position: sticky;
+  background-color: #fff;
+  top: 0;
+}
+
+/* add bottom border to sticky header */
+:where(.datatable__head)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: #000 1px solid;
+}
+
+:where(.datatable__head th) {
+  padding: 0.25rem 0.5rem;
+}
+
+:where(.datatable__head button) {
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+
+  padding-right: 1rem;
+  position: relative;
+}
+
+:where(.datatable__body) {
+  border-block: #000 solid 1px;
+}
+
+:where(.datatable__body td) {
+  padding: 0.25rem 0.5rem;
+  border-bottom: #000 solid 1px;
+  border-color: rgb(0, 0, 0, 0.3);
+}
+
+:where(.datatable__body tr:last-child td) {
+  border: none;
+}
+
+/* add sorting indicators to buttons */
+:where(.datatable__head button)::before,
+:where(.datatable__head button)::after {
+  position: absolute;
+  display: inline-block;
+  content: '▴▾';
+  right: 0;
+  font-size: 0.65rem;
+}
+
+:where(.datatable__head button)::before {
+  content: '▴';
+  top: -0.05rem;
+}
+
+:where(.datatable__head button)::after {
+  content: '▾';
+  bottom: -0.05rem;
+}
+
+:where(.datatable__head--selected)::after {
+  content: '';
+}
+
+:where(.datatable__head--selected-reversed)::before {
+  content: '';
+}
+
+/* table section - row backgrounds */
+:where(.datatable__body tr:nth-child(odd)) {
+  background-color: rgb(0, 0, 0, 0.05);
+}
+
+:where(.datatable__body tr:hover td) {
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+/* table section - highlight backgrounds */
+:where(td.datatable__body--highlight) {
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+:where(tr:hover td.datatable__body--highlight) {
+  background-color: rgb(0, 0, 0, 0.15);
+}
+
+/* table section - no data */
+:where(.datatable__body--no-data),
+:where(.datatable__body--no-data:hover td) {
+  text-align: center;
+  background-color: #fff;
+}
+
+/* bottom section: status and navigation */
+:where(.datatable__bottom) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  gap: 4rem;
+}
+
+:where(.datatable__bottom-actions) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* bottom section - navigation buttons */
+:where(.datatable__bottom-actions button) {
+  font-size: 1rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding-inline: 0.25rem;
+  background-color: transparent;
+  border: #000 solid 1px;
+  border-radius: 0.25rem;
+}
+
+:where(.datatable__bottom-actions button:hover),
+:where(.datatable__bottom-actions button:focus) {
+  background-color: rgb(0, 0, 0, 0.15);
+}
+
+:where(.datatable__bottom-actions button:disabled),
+:where(.datatable__bottom-actions button:disabled:hover) {
+  background-color: #fff;
+  border-color: rgb(0, 0, 0, 0.3);
+}
+
+/* bottom section - navigation status */
+:where(.datatable__bottom--page-indicator) {
+  color: rgb(0, 0, 0, 1);
+  background-color: rgb(0, 0, 0, 0.3);
+  border: none;
+  font-weight: bold;
+  opacity: 1;
+}
+
+/* bottom section - navigation seek */
+:where(.datatable__bottom-actions--seek) {
+  margin-right: 1rem;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+:where(.datatable__bottom-actions--seek-input) {
+  border: #000 solid 1px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+  height: 1.5rem;
+  width: 5rem;
+}
+
+:where(.datatable__shortcuts code) {
+  display: inline-block;
+  color: #000;
+  background-color: rgb(0, 0, 0, 0.3);
+  min-width: 1.75rem;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+:where(.datatable__shortcuts-modal) {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: solid 2px #000;
+}
+
+:where(.datatable__shortcuts-modal):focus {
+  outline: transparent;
+}
