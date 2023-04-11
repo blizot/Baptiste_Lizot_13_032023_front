@@ -1,0 +1,33 @@
+/* YOU SHOULD EDIT THE COMPONENT'S CSS IN AN OTHER FILE */
+
+/* we use the :where() selector so the classes have no  */
+/* specificity in order to allow you to personalize the */
+/* component to your liking without the !important flag */
+
+:where(.notification__container) {
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+:where(.notification) {
+  position: absolute;
+  
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  
+  transform: translateY(-200%);
+  transition: transform 0.5s ease-in-out;
+}
+
+:where(.notification.visible) {
+  transform: translateY(0);
+}
