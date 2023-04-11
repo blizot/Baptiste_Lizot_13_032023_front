@@ -54,7 +54,7 @@
     background-color: color('primary', 'lighter');
   }
 
-  &__body tr:nth-child(even) {
+  &__body tr:nth-child(odd) {
     background-color: hslac(color('primary'), 0.05);
   }
 
