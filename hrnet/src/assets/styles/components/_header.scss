@@ -1,5 +1,11 @@
 @use '../components/' as *;
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -10,9 +16,6 @@
 
   background-color: color('light');
   border-bottom: 1px solid color('primary');
-  position: sticky;
-  top: 0;
-  z-index: 999999;
 
   &__app-name {
     &:hover {
