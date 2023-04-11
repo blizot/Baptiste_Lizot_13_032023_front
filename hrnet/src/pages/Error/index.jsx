@@ -8,15 +8,15 @@ function Error() {
   console.error(error)
 
   if (!isRouteErrorResponse(error)) { 
-    return <p>Oops!</p>
+    return <p className='error__message'>Oops!</p>
   }
 
   return (
     <>
       <Header />
-      <main>
-        <h1>{error.status === 404 ? error.status : 'Oops!'}</h1>
-        <p>{error.status === 404 ? 'This page doesn\'t exist' : 'Sorry, an unexpected error has occured:'}</p>
+      <main className='error'>
+        <h1 className='error__title'>{error.status === 404 ? error.status : 'Oops!'}</h1>
+        <p className='error__message'>{error.status === 404 ? 'This page doesn\'t exist' : 'Sorry, an unexpected error has occured:'}</p>
         {error.status !== 404 && 
           <p>{error.statusText || error.message}</p>
         }

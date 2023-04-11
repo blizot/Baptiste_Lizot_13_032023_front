@@ -1,0 +1,16 @@
+@use '../pages/' as *;
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 10rem;
+    color: color('primary', 'lighter');
+  }
+
+  &__message {
+    color: color('primary', 'darker')
+  }
+}
