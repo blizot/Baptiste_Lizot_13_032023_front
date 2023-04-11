@@ -14,7 +14,7 @@ function TableFooter({ dataLength }) {
         <li className='datatable__bottom-actions--seek'>
           <label id='page-seek-input'>
             Go to page: <input type='number' min='1' max={pageMax}
-              className='datatable__bottom-actions--seek-input'
+              className='datatable__seek-input'
               onInput={(event) => pageNavigation('seek', event)}
             />
           </label>

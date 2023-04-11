@@ -120,7 +120,7 @@
 }
 
 /* table section - row backgrounds */
-:where(.datatable__body tr:nth-child(odd)) {
+:where(.datatable__body tr:nth-child(even)) {
   background-color: rgb(0, 0, 0, 0.05);
 }
 
@@ -129,7 +129,7 @@
 }
 
 /* table section - highlight backgrounds */
-:where(td.datatable__body--highlight) {
+:where(.datatable__body--highlight) {
   background-color: rgb(0, 0, 0, 0.1);
 }
 
@@ -138,10 +138,8 @@
 }
 
 /* table section - no data */
-:where(.datatable__body--no-data),
-:where(.datatable__body--no-data:hover td) {
+:where(.datatable__body--no-data) {
   text-align: center;
-  background-color: #fff;
 }
 
 /* bottom section: status and navigation */
@@ -198,7 +196,7 @@
   align-items: center;
 }
 
-:where(.datatable__bottom-actions--seek-input) {
+:where(.datatable__seek-input) {
   border: #000 solid 1px;
   border-radius: 0.25rem;
   font-size: 1rem;
@@ -207,6 +205,8 @@
   width: 5rem;
 }
 
+
+/* shortcuts section */
 :where(.datatable__shortcuts code) {
   display: inline-block;
   color: #000;
@@ -218,7 +218,7 @@
   margin-bottom: 0.25rem;
 }
 
-:where(.datatable__shortcuts-modal) {
+:where(.datatable__shortcueven) {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
