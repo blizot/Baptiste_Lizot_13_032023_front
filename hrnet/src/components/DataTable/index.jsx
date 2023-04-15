@@ -10,7 +10,7 @@ import pageNavigationHub from './services/pageNavigation'
 import filter from './services/searchFilter'
 import tableSort from './services/tableSort'
 
-function DataTable({data, layout}) {
+function DataTable({ data, layout }) {
   const [filteredData, setFilteredData] = useState(data)
   const [sortedData, setSortedData] = useState(data)
   const [slicedData, setSlicedData] = useState([])
@@ -75,9 +75,15 @@ function DataTable({data, layout}) {
 
   const servicesProvider = { tableServices, tableHeaderServices, tableFooterServices, shortcutsServices }
 
+  // IMPORTANT rerender component on data prop change
+  useEffect(() => {
+    setFilteredData(data)
+    setSortedData(data)
+  }, [data])
+
   return (
     <Services.Provider value={servicesProvider}>
-      <Shortcuts data={data}>
+      <Shortcuts>
         <Table data={slicedData} layout={layout} />
       </Shortcuts>
     </Services.Provider>

@@ -3,6 +3,8 @@ import DepartmentDropdown from '../../components/DepartmentDropdown'
 import StateDropdown from '../../components/StateDropdown'
 import Notification from '../../components/Notification'
 
+import fetchAPI from '../../api/fetchAPI'
+
 function Home() {
   function handleSubmit(event) {
     event.preventDefault()
@@ -29,13 +31,15 @@ function Home() {
       department,
     }
 
+    fetchAPI('/employees', employee, 'POST')
+      .then(response => console.log(response))
+
+    //TODO display when validated
     const notification = document.getElementById('created-employee-notification')
     notification.classList.add('visible')
     setTimeout(() => {
       notification.classList.remove('visible')
     }, 1500);
-
-    console.log(employee)
   }
 
   return (
