@@ -6,6 +6,22 @@ import Notification from '../../components/Notification'
 import fetchAPI from '../../api/fetchAPI'
 
 function Home() {
+  function showConfirmNotification() {
+    const notification = document.getElementById('created-employee-notification')
+    notification.classList.add('visible')
+    setTimeout(() => {
+      notification.classList.remove('visible')
+    }, 1500)
+  }
+
+  function showErrorNotification() {
+    const notification = document.getElementById('error-notification')
+    notification.classList.add('visible')
+    setTimeout(() => {
+      notification.classList.remove('visible')
+    }, 1500)
+  }
+
   function handleSubmit(event) {
     event.preventDefault()
 
@@ -32,14 +48,10 @@ function Home() {
     }
 
     fetchAPI('/employees', employee, 'POST')
-      .then(response => console.log(response))
-
-    //TODO display when validated
-    const notification = document.getElementById('created-employee-notification')
-    notification.classList.add('visible')
-    setTimeout(() => {
-      notification.classList.remove('visible')
-    }, 1500);
+      .then(response => !response.error
+        ? showConfirmNotification()
+        : showErrorNotification()
+      )    
   }
 
   return (
@@ -77,6 +89,7 @@ function Home() {
       </form>
 
       <Notification message='Employee created!' id='created-employee' />
+      <Notification message='There was an error...' id='error' />
     </main>
   )
 }
