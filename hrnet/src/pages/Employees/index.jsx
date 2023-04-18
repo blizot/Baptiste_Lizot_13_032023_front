@@ -39,7 +39,7 @@ function Employees() {
   const [data, setData] = useState([])
   useEffect(() => {
     fetchAPI('/employees')
-      .then(response => setData(response))
+      .then(response => !response.error ? setData(response) : undefined)
   }, [])
 
   return (
