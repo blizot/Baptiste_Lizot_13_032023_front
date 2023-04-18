@@ -1,0 +1,10 @@
+{
+  "name": "date-selector-by-blizot",
+  "version": "1.0.0",
+  "description": "React date selector component",
+  "author": "blizot",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}

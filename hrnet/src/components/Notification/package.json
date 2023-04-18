@@ -1,0 +1,10 @@
+{
+  "name": "notification-by-blizot",
+  "version": "1.0.0",
+  "description": "React notification component",
+  "author": "blizot",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}

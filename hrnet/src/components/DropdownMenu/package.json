@@ -1,0 +1,10 @@
+{
+  "name": "dropdown-menu-by-blizot",
+  "version": "1.0.0",
+  "description": "React dropdown menu component",
+  "author": "blizot",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
