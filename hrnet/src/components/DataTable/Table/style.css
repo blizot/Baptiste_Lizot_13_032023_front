@@ -11,12 +11,6 @@
   overflow-x: auto;
 }
 
-@media only screen and (min-width: 992px) {
-  :where(.datatable) {
-    overflow-x: unset;
-  }
-}
-
 /* top section: table length selector and search feature */
 :where(.datatable__top-actions) {
   display: flex;
@@ -96,7 +90,6 @@
 :where(.datatable__head button)::after {
   position: absolute;
   display: inline-block;
-  content: '▴▾';
   right: 0;
   font-size: 0.65rem;
 }

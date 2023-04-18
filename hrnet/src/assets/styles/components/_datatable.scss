@@ -1,6 +1,10 @@
 @use '../components/' as *;
 
 .datatable {
+  @include breakpoint('large') {
+    overflow-x: unset;
+  }
+
   :where(button),
   :where(select),
   :where(input) {
